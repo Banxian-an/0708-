@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>请求后台数据</title>
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme- chalk/index.css"> 
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+
+
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <th>用户名</th>
+                <th>密码</th>
+            </tr>
+            <tr v-for="user in users">
+                <td>{{user.name}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: { users: "" },
+            created() {
+                axios.get("http://localhost:8080/day22_war_exploded/userServlet").then(msg => {this.users = msg.data});
+            },
+        });
+    </script>
+
+
+</body>
+
+</html>

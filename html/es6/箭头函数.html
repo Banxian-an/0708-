@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+
+</head>
+<body>
+    <script type="text/javascript">
+        function f1(a){
+            return a;
+        }
+       var f2 = a => a;
+       console.log(f2(90));
+
+       var f3 = () =>{
+           console.log("hello");
+       }
+       f3();
+
+       var f4 = (a,b) => a+b;
+       console.log(f4(30,40));
+    </script>
+</body>
+</html>

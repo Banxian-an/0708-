@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+
+</head>
+<body>
+        <div id="app">
+            姓名：{{name}}<br>
+            姓：{{xing}}<br>
+            名：{{ming}}
+        </div>
+        <script>
+            var app = new Vue({
+               el:"#app",
+               data:{
+                   //xing:"uuuu",
+                   //ming:"iii",
+                   name:"飞雪连天射白鹿"
+               },
+                   
+               computed:{
+                   xing:function(){
+                    return this.name.substring(0,2); 
+                   },
+                   ming(){
+                       return this.name.substring(2);
+                   }
+               }
+            });
+        </script>
+
+
+
+
+</body>
+</html>

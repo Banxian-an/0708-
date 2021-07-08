@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <bx></bx>
+    </div>
+    <script>
+        Vue.component(
+            "bx",
+            {
+                template:`<div>
+                <input type='button' value='测试' @click='count++'>{{count}}
+                </div>`,
+                data: function () {
+                    return {
+                        count: 0
+                    }
+                }
+            
+            }
+        );
+        new Vue({
+           el:"#app" 
+        });
+    </script>
+
+
+    
+</body>
+</html>
